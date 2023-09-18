@@ -21,6 +21,7 @@ export class AuthService {
     const hashedPassword = salt + '.' + hash.toString('hex');
 
     const user = await this.usersService.create(email, hashedPassword);
+    return user;
   }
 
   async signIn(email: string, password: string) {
