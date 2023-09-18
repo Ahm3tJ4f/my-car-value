@@ -13,7 +13,7 @@ export class AuthService {
     const users = await this.usersService.find(email);
 
     if (users.length) {
-      throw new HttpException('user already exist', HttpStatus.CONFLICT);
+      throw new HttpException('user already exists', HttpStatus.CONFLICT);
     }
 
     const salt = randomBytes(8).toString('hex');
